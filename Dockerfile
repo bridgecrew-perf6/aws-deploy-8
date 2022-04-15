@@ -1,4 +1,3 @@
-FROM alpine:latest
+FROM wordpress:5.9.3-php8.1-apache
 
-RUN echo "Hello world"
-
+RUN echo "Building custom wordpress image..."

@@ -1,0 +1,29 @@
+{
+    "taskDefinition": "ecs-demo:1",
+    "cluster": "wordpress-cluster",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:559058471915:targetgroup/wordpres-tg-1/ba641e364871ba4d",
+            "containerName": "wordpress-demo",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "CODE_DEPLOY"
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-cb0853c4",
+                "subnet-323f5d6e"
+            ],
+            "securityGroups": [
+                "sg-d5840f90"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}

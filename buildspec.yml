@@ -8,10 +8,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`      
-      - docker build -t test:v1 .
-      - docker tag test:v1 559058471915.dkr.ecr.us-east-1.amazonaws.com/test:v1      
+      - docker build -t wordpress:5.9.3.tmp1 .
+      - docker tag wordpress:5.9.3.tmp1 559058471915.dkr.ecr.us-east-1.amazonaws.com/wordpress:5.9.3.tmp1      
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 559058471915.dkr.ecr.us-east-1.amazonaws.com/test:v1
+      - docker push 559058471915.dkr.ecr.us-east-1.amazonaws.com/wordpress:5.9.3.tmp1
