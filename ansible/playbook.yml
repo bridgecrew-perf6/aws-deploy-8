@@ -1,0 +1,24 @@
+- hosts: localhost
+  gather_facts: false
+  # vars:
+  #   region: us-east-1
+  #   size: 100
+  #   rds_instance_name: test-mysql
+  #   instance_type: db.t3.micro
+  #   db_engine: MySQL
+  #   engine_version: 5.7.x
+  #   subnet: subnet-cb0853c4
+  #   security_groups: sg-d5840f90
+  #   backup_retention: 14
+  #   db_name: wordpress
+  #   username: rootadmin
+  #   password: rootadmin
+  tasks:
+    - name: Create Mysql RDS
+      community.aws.rds_instance:
+        engine: mysql
+        db_instance_identifier: leta-test
+        instance_type: db.t3.micro
+        allocated_storage: 10
+        password: adminadmin
+        username: adminadmin
